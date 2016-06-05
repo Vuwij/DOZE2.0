@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.msft.doze20">
 
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -16,7 +18,7 @@
             </intent-filter>
         </activity>
 
-        <receiver android:name="ScreenOnOffReceiver" >
+        <receiver android:name=".ScreenReceiver" >
             <intent-filter>
                 <action android:name="android.intent.action.SCREEN_OFF" />
                 <action android:name="android.intent.action.SCREEN_ON" />
@@ -24,6 +26,7 @@
                 <action android:name="android.intent.action.ACTION_POWER_DISCONNECTED" />
             </intent-filter>
         </receiver>
+<<<<<<< HEAD
         <receiver android:name="MyStartServiceReceiver" >
         </receiver>
         <receiver android:name=".BatteryLevelReceiver">
@@ -32,6 +35,14 @@
                 <action android:name="android.intent.action.ACTION_BATTERY_OKAY"/>
             </intent-filter>
         </receiver>
+||||||| merged common ancestors
+        <receiver android:name="MyStartServiceReceiver" >
+        </receiver>
+=======
+
+        <receiver android:name=".updateToServer"></receiver>
+
+>>>>>>> a9728ffe47d08ec7dd99e8714984e54044526949
     </application>
 
 </manifest>

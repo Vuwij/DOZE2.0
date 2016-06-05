@@ -26,6 +26,11 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @Override
+    protected void onResume(){
+        super.onResume();
+    }
+
+    @Override
     protected void onDestroy(){
         super.onDestroy();
         System.out.print("Destroyed");

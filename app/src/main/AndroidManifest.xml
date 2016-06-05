@@ -26,14 +26,21 @@
                 <action android:name="android.intent.action.ACTION_POWER_DISCONNECTED" />
             </intent-filter>
         </receiver>
+<<<<<<< HEAD
         <receiver android:name=".BatteryLevelReceiver">
+=======
+        <receiver android:name=".BatteryReceiver">
+>>>>>>> 60cd3ac3897fc925acccb51c1db617016fed62f4
             <intent-filter>
-                <action android:name="android.intent.action.ACTION_BATTERY_LOW"/>
-                <action android:name="android.intent.action.ACTION_BATTERY_OKAY"/>
+                <action android:name="android.intent.action.ACTION_BATTERY_LOW" />
+                <action android:name="android.intent.action.ACTION_BATTERY_OKAY" />
             </intent-filter>
         </receiver>
+<<<<<<< HEAD
 
         <receiver android:name=".updateToServer"></receiver>
+=======
+>>>>>>> 60cd3ac3897fc925acccb51c1db617016fed62f4
     </application>
 
 </manifest>

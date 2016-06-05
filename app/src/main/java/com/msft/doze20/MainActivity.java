@@ -10,12 +10,14 @@ import android.provider.Settings;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.TextView;
 import android.view.View;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
     BroadcastReceiver screenReceiver;
+    BroadcastReceiver batteryReceiver;
     private PendingIntent pendingIntent;
     private AlarmManager manager;
 
@@ -30,6 +32,11 @@ public class MainActivity extends AppCompatActivity {
         filter.addAction(Intent.ACTION_POWER_DISCONNECTED);
         screenReceiver = new ScreenReceiver();
         registerReceiver(screenReceiver, filter);
+
+        IntentFilter filter2 = new IntentFilter(Intent.ACTION_BATTERY_LOW);
+        filter2.addAction(Intent.ACTION_BATTERY_OKAY);
+        batteryReceiver = new BatteryReceiver();
+        registerReceiver(batteryReceiver, filter2);
 
         Intent alarmIntent = new Intent(this, updateToServer.class);
         pendingIntent = PendingIntent.getBroadcast(this, 0, alarmIntent, 0);
@@ -65,6 +72,7 @@ public class MainActivity extends AppCompatActivity {
         super.onDestroy();
         System.out.print("Destroyed");
         unregisterReceiver(screenReceiver);
+        unregisterReceiver(batteryReceiver);
         cancelAlarm();
     }
 }

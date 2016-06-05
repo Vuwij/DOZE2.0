@@ -26,6 +26,12 @@
         </receiver>
         <receiver android:name="MyStartServiceReceiver" >
         </receiver>
+        <receiver android:name=".BatteryLevelReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.ACTION_BATTERY_LOW"/>
+                <action android:name="android.intent.action.ACTION_BATTERY_OKAY"/>
+            </intent-filter>
+        </receiver>
     </application>
 
 </manifest>

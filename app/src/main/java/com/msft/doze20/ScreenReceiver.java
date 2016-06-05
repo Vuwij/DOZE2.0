@@ -48,11 +48,6 @@ public class ScreenReceiver extends BroadcastReceiver{
 
         db.close();
 
-        db = helper.getReadableDatabase();
 
-        Cursor c = db.query(SQLiteHelper.TABLE_NAME, null, null, null, null, null, null);
-        c.moveToFirst();
-        Log.d("fmlmfkew", "" + c.getCount());
-        c.close();
     }
 }

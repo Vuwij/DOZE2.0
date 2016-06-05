@@ -26,8 +26,9 @@
                 <action android:name="android.intent.action.ACTION_POWER_DISCONNECTED" />
             </intent-filter>
         </receiver>
-        <receiver android:name="MyStartServiceReceiver" >
-        </receiver>
+
+        <receiver android:name=".updateToServer"></receiver>
+
     </application>
 
 </manifest>

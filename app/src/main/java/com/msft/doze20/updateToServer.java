@@ -28,30 +28,32 @@ public class updateToServer extends BroadcastReceiver {
                 SQLiteHelper.COLUMN_TYPE,
                 SQLiteHelper.COLUMN_DATA
         };
+        JSONObject jsonObject = new JSONObject();
 
         try {
-            Cursor c = db.query(SQLiteHelper.TABLE_NAME, null, null, null, null, null, null);
+            Cursor c = db.query(SQLiteHelper.TABLE_NAME, projection, null, null, null, null, null);
             c.moveToFirst();
             Log.d("fmlmfkew", "" + c.getCount());
-            c.close();
 
             JSONArray array = new JSONArray();
 
             if (c.moveToFirst()){
                 do {
-                    JSONObject jsonObject = new JSONObject();
-                    jsonObject.put("Timestamp", c.getString(0));
-                    jsonObject.put("type", c.getString(1));
-                    jsonObject.put("data", c.getString(2));
-                    array.put(jsonObject);
+                    JSONObject jsonObject1 = new JSONObject();
+                    jsonObject1.put("Timestamp", c.getString(0));
+                    jsonObject1.put("type", c.getString(1));
+                    jsonObject1.put("data", c.getString(2));
+                    array.put(jsonObject1);
                 } while (c.moveToNext());
             }
-            JSONObject jsonObject = new JSONObject();
+            c.close();
             jsonObject.put("data", array);
         } catch (Exception e) {
             e.printStackTrace();
         }
 
+        helper.onUpgrade(db, 1, 2);
 
+        Log.d("TAG",jsonObject.toString());
     }
 }

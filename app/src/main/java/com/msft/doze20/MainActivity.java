@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void startAlarm() {
         manager = (AlarmManager)getSystemService(Context.ALARM_SERVICE);
-        int interval = 15000;
+        int interval = 1000;
 
         manager.setRepeating(AlarmManager.RTC_WAKEUP, System.currentTimeMillis(), interval, pendingIntent);
 //        Toast.makeText(this, "Alarm Set", Toast.LENGTH_SHORT).show();

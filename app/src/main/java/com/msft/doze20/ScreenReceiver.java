@@ -45,9 +45,6 @@ public class ScreenReceiver extends BroadcastReceiver{
         }
 
         db.insert(SQLiteHelper.TABLE_NAME, null, values);
-
         db.close();
-
-
     }
 }

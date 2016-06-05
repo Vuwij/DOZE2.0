@@ -4,8 +4,10 @@ import android.content.BroadcastReceiver;
 import android.content.ContentValues;
 import android.content.Context;
 import android.content.Intent;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
 
 
 public class ScreenReceiver extends BroadcastReceiver{
@@ -43,5 +45,15 @@ public class ScreenReceiver extends BroadcastReceiver{
         }
 
         db.insert(SQLiteHelper.TABLE_NAME, null, values);
+
+        db.close();
+
+
+        db = helper.getReadableDatabase();
+
+        Cursor c = db.query(SQLiteHelper.TABLE_NAME, null, null, null, null, null, null);
+        c.moveToFirst();
+        Log.d("fmlmfkew", "" + c.getCount());
+        c.close();
     }
 }

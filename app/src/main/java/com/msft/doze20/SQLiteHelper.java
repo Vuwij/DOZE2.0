@@ -20,6 +20,7 @@ public class SQLiteHelper extends SQLiteOpenHelper{
 
     public SQLiteHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
+        context.openOrCreateDatabase(DATABASE_NAME, context.MODE_PRIVATE, null);
     }
 
     @Override

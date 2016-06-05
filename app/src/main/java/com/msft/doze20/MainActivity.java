@@ -1,7 +1,12 @@
 package com.msft.doze20;
 
+<<<<<<< HEAD
+import android.app.DatePickerDialog;
+||||||| merged common ancestors
+=======
 import android.app.AlarmManager;
 import android.app.PendingIntent;
+>>>>>>> a9728ffe47d08ec7dd99e8714984e54044526949
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
@@ -13,6 +18,8 @@ import android.util.Log;
 import android.widget.TextView;
 import android.view.View;
 import android.widget.Toast;
+
+import com.wdullaer.materialdatetimepicker.time.RadialPickerLayout;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -47,9 +54,24 @@ public class MainActivity extends AppCompatActivity {
         startAlarm();
     }
 
+<<<<<<< HEAD
+
+    @Override
+    protected void onPause() {
+        if (ScreenReceiver.wasScreenOn) {
+            System.out.println("SCREEN TURNED OFF Activity");
+        }
+||||||| merged common ancestors
+    @Override
+    protected void onPause(){
+        if (ScreenReceiver.wasScreenOn){
+            System.out.println("SCREEN TURNED OFF Activity");
+        }
+=======
     public void startAlarm() {
         manager = (AlarmManager)getSystemService(Context.ALARM_SERVICE);
         int interval = 1000;
+>>>>>>> a9728ffe47d08ec7dd99e8714984e54044526949
 
         manager.setRepeating(AlarmManager.RTC_WAKEUP, System.currentTimeMillis(), interval, pendingIntent);
 //        Toast.makeText(this, "Alarm Set", Toast.LENGTH_SHORT).show();
@@ -63,9 +85,36 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @Override
+<<<<<<< HEAD
+    protected void onResume() {
+
+        if (!ScreenReceiver.wasScreenOn)
+            System.out.println("SCREEN TURNED ON Activity");
+||||||| merged common ancestors
     protected void onResume(){
+
+        if (!ScreenReceiver.wasScreenOn)
+            System.out.println("SCREEN TURNED ON Activity");
+=======
+    protected void onResume(){
+>>>>>>> a9728ffe47d08ec7dd99e8714984e54044526949
         super.onResume();
     }
+<<<<<<< HEAD
+
+    @Override
+    public void onTimeSet(RadialPickerLayout view, int hourOfDay, int minute) {
+        String time = "You picked the following time: "+hourOfDay+"h"+minute;
+        timeTextView.setText(time);
+    }
+
+    @Override
+    public void onDateSet(DatePickerDialog view, int year, int monthOfYear, int dayOfMonth) {
+        String date = "You picked the following date: "+dayOfMonth+"/"+(monthOfYear+1)+"/"+year;
+        dateTextView.setText(date);
+    }
+||||||| merged common ancestors
+=======
 
     @Override
     protected void onDestroy(){
@@ -75,4 +124,12 @@ public class MainActivity extends AppCompatActivity {
         unregisterReceiver(batteryReceiver);
         cancelAlarm();
     }
+>>>>>>> a9728ffe47d08ec7dd99e8714984e54044526949
 }
+this.registerReceiver(this.batteryInfoReceiver,new IntentFilter(Intent.ACTION_BATTERY_CHANGED));
+private BroadcastReceiver batteryInfoReceiver=new BroadcastReceiver(){
+@Override
+public void onReceive(Context context,Intent intent){
+        // this is where we deal with the data sent from the battery.
+        }
+        };

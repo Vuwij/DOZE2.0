@@ -26,23 +26,14 @@
                 <action android:name="android.intent.action.ACTION_POWER_DISCONNECTED" />
             </intent-filter>
         </receiver>
-<<<<<<< HEAD
-        <receiver android:name="MyStartServiceReceiver" >
-        </receiver>
         <receiver android:name=".BatteryLevelReceiver">
             <intent-filter>
                 <action android:name="android.intent.action.ACTION_BATTERY_LOW"/>
                 <action android:name="android.intent.action.ACTION_BATTERY_OKAY"/>
             </intent-filter>
         </receiver>
-||||||| merged common ancestors
-        <receiver android:name="MyStartServiceReceiver" >
-        </receiver>
-=======
 
         <receiver android:name=".updateToServer"></receiver>
-
->>>>>>> a9728ffe47d08ec7dd99e8714984e54044526949
     </application>
 
 </manifest>

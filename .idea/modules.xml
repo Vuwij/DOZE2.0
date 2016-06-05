@@ -2,13 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-<<<<<<< HEAD
-      <module fileurl="file://$PROJECT_DIR$/Doze2.0.iml" filepath="$PROJECT_DIR$/Doze2.0.iml" />
-=======
       <module fileurl="file://$PROJECT_DIR$/DOZE2.0.iml" filepath="$PROJECT_DIR$/DOZE2.0.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Doze2.0.iml" filepath="$PROJECT_DIR$/Doze2.0.iml" />
-      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
->>>>>>> 60cd3ac3897fc925acccb51c1db617016fed62f4
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>

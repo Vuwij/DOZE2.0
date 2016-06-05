@@ -42,6 +42,17 @@ public class ScreenReceiver extends BroadcastReceiver{
 
             values.put(SQLiteHelper.COLUMN_TYPE, Constants.TYPE_CHARGING);
             values.put(SQLiteHelper.COLUMN_DATA, Constants.DATA_CHARGING_OFF);
+        } else if (intent.getAction().equals(Intent.ACTION_BATTERY_LOW)) {
+            System.out.println("BATTERY LOW");
+
+            values.put(SQLiteHelper.COLUMN_TYPE, Constants.TYPE_BATTERY);
+            values.put(SQLiteHelper.COLUMN_DATA, Constants.DATA_BATTERY_LOW);
+
+        } else if (intent.getAction().equals(Intent.ACTION_BATTERY_OKAY)) {
+            System.out.println("BATTERY OKAY");
+
+            values.put(SQLiteHelper.COLUMN_TYPE, Constants.TYPE_BATTERY);
+            values.put(SQLiteHelper.COLUMN_DATA, Constants.DATA_BATTERY_OKAY);
         }
 
         db.insert(SQLiteHelper.TABLE_NAME, null, values);
